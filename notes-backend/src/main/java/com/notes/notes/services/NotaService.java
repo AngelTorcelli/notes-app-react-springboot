@@ -47,4 +47,14 @@ public class NotaService {
             return false;
         }
     }
+
+    public Optional<NotaModel> buscarNotaPorId(Long id){
+        try{
+            Optional<NotaModel> nota= notaRepository.findById(id);
+            return nota;
+        } catch(Exception e) {
+            System.out.println(e);
+            return null;
+        }
+    }
 }

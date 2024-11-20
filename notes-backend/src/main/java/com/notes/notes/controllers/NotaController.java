@@ -1,6 +1,7 @@
 package com.notes.notes.controllers;
 
 
+import java.lang.StackWalker.Option;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.Optional;
@@ -49,5 +50,11 @@ public class NotaController {
                 )
             );
         }
+    }
+
+    @GetMapping("/buscar")
+    public Optional<NotaModel> buscarNotaPorId(@RequestParam("id") Long id) {
+        System.out.println("id a buscar: " + id);
+        return this.notaService.buscarNotaPorId(id);
     }
 }

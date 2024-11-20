@@ -1,6 +1,22 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 6fr;
+  max-height: 100dvh;
+  align-items: center;
+  justify-items: center;
+  font-family: "Cascadia Code", sans-serif;
 }
+
+h2 {
+  text-align: left;
+  font-size: 3rem;
+}
+
+
+h3 {
+  text-align: left;
+  padding-left: 3rem;
+  font-size: 2.5rem;
+}
+
