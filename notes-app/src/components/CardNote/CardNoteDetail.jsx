@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { getNoteById, updateNote } from '../../endpoints';
+import { getNoteById, updateNote, deleteNote } from '../../endpoints';
 import './CardNoteDetail.css';
 import { useNavigate } from 'react-router-dom';
 
@@ -84,6 +84,18 @@ const CardNoteDetail = () => {
     }
   }
 
+  const handleBorrar = async () => {
+    if(archivado){
+      alert("No se puede borrar una nota archivada");
+    }else{
+      const response = await deleteNote(id);
+      if(response.ok){
+        navigate('/');
+        alert("Nota borrada con exito");
+      }
+    }
+  }
+
   return (
     <section className='noteDetails'>
         <form onSubmit={handleSubmit}>
@@ -97,8 +109,11 @@ const CardNoteDetail = () => {
             <input type="checkbox" id="destacado" name="destacado" checked={destacado} onChange={handleDestacar} />
             <label htmlFor="archivado">Archivado</label>
             <input type="checkbox" id="archivado" name="archivado" checked={archivado} onChange={handleArchivar} />
-            <button type="submit">Actualizar nota</button>
-
+            <div className="buttons">
+              <button type="submit" className='btn-actualizar'>Actualizar nota</button>
+              
+              <button type="button" className='btn-eliminar' onClick={handleBorrar}>Borrar</button>
+            </div>
         </form>
     </section>
   );

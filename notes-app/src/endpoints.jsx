@@ -46,3 +46,33 @@ export const getNoteById = async (id) => {
         console.log(error)
     }
 }
+
+export const deleteNote = async (id) => {
+    try {
+        const response = await fetch(back_url + "/nota/" + id, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        })                
+        return response;
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+export const getTags = async () => {
+    try {
+        const response = await fetch(back_url + "/etiqueta", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        })                
+        const data = await response.json();
+        //console.log(data)
+        return data
+    } catch (error) {
+        console.log(error)
+    }
+}

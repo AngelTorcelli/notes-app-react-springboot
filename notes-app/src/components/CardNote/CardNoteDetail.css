@@ -58,8 +58,7 @@ textarea:focus {
 }
 
 button {
-    background-color: var(--fondo);
-    color: var(--dim-gray);
+    
     padding: 0.5rem 1rem;
     border: none;
     border-radius: 4px;
@@ -68,10 +67,7 @@ button {
     font-weight: 500;
 }
 
-button:hover {
-    background-color: var(--font-color-2);
-    color: #fafafa;
-}
+
 
 input[type="checkbox"] {
     margin-right: 0.5rem;
@@ -134,3 +130,34 @@ input[type="checkbox"]:checked::before {
     border-radius: 100px 100px 30px 100px;
   }
 
+
+.buttons {
+    display: flex;
+    gap: 1rem;    
+}
+
+.buttons button {    
+    width: 9rem;    
+    cursor: pointer;        
+}
+
+.btn-eliminar {
+    background-color: var(--contraste);
+    filter: brightness(0.9); 
+    color: var(--dim-gray);
+    transition: filter 0.3s ease; 
+}
+
+.btn-eliminar:hover {
+    filter: brightness(1.1); 
+}
+
+.btn-actualizar {
+    background-color: var(--font-color-2);
+    color: #fafafa;
+}
+
+.btn-actualizar:hover {
+    filter: brightness(1.1);
+    
+}

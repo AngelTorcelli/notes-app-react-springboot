@@ -35,6 +35,25 @@
     max-height: 80vh;
   }
 
+.filter {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    gap: 1rem;
+    
+}
+.filter select {
+    background-color: var(--dim-gray);    
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+}
+
+.filter select:focus {
+    outline: none;    
+}
+
 .pinned {
     display: flex;
     justify-content: left;
@@ -65,4 +84,8 @@ hr {
     border-top: 2px solid var(--dim-gray);
     margin: 0;
     padding: 0;
+}
+
+p {
+  font-size: 2rem;
 }
